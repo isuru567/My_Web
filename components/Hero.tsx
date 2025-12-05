@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-primary-600 dark:text-primary-400 uppercase bg-primary-100 dark:bg-primary-900/30 rounded-full">
-            Junior Web Developer
+            Senior React Engineer
           </div>
           <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-400">
             Building digital <br />
