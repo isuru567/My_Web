@@ -1,6 +1,6 @@
 import React from 'react';
 import { Section } from './Section';
-import { Code2, Layout, Database, Terminal, Cpu, Globe } from 'lucide-react';
+import { Code2, Layout, Database, Terminal, Cloud, Globe } from 'lucide-react';
 import { Skill } from '../types';
 
 const skills: Skill[] = [
@@ -8,7 +8,7 @@ const skills: Skill[] = [
   { name: 'TypeScript', icon: Terminal, level: 90 },
   { name: 'UI/UX Design', icon: Layout, level: 85 },
   { name: 'Node.js & API', icon: Database, level: 80 },
-  { name: 'Performance', icon: Cpu, level: 85 },
+  { name: 'Cloud Computing', icon: Cloud, level: 85 },
   { name: 'Web Standards', icon: Globe, level: 90 },
 ];
 

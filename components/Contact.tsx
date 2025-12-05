@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Section } from './Section';
-import { Mail, Github, Linkedin, Twitter, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, Facebook, Send, Phone, MapPin } from 'lucide-react';
 
 export const Contact: React.FC = () => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
@@ -36,15 +36,29 @@ export const Contact: React.FC = () => {
             </p>
             
             <div className="space-y-6">
-              <a href="mailto:hello@example.com" className="flex items-center gap-4 text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              <a href="mailto:isurushehan450@gmail.com" className="flex items-center gap-4 text-slate-700 dark:text-slate-200 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                 <div className="w-12 h-12 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-sm">
                   <Mail size={20} />
                 </div>
-                <span className="font-medium">hello@example.com</span>
+                <span className="font-medium">isurushehan450@gmail.com</span>
               </a>
+
+              <div className="flex items-center gap-4 text-slate-700 dark:text-slate-200">
+                <div className="w-12 h-12 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-sm">
+                  <Phone size={20} />
+                </div>
+                <span className="font-medium">+94 7X XXX XXXX</span>
+              </div>
+
+              <div className="flex items-center gap-4 text-slate-700 dark:text-slate-200">
+                <div className="w-12 h-12 bg-white dark:bg-slate-800 rounded-full flex items-center justify-center shadow-sm">
+                  <MapPin size={20} />
+                </div>
+                <span className="font-medium">Colombo, Sri Lanka</span>
+              </div>
               
               <div className="flex gap-4 mt-8">
-                {[Github, Linkedin, Twitter].map((Icon, idx) => (
+                {[Github, Linkedin, Facebook].map((Icon, idx) => (
                   <a 
                     key={idx} 
                     href="#" 
