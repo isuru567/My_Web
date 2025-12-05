@@ -27,10 +27,14 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        scrolled || isOpen
           ? 'bg-white/80 dark:bg-slate-950/80 backdrop-blur-md shadow-sm border-b border-slate-200 dark:border-slate-800'
           : 'bg-transparent'
       }`}
@@ -38,7 +42,12 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a href="#hero" className="flex items-center gap-3 group" aria-label="Home">
+          <a 
+            href="#hero" 
+            onClick={handleNavClick}
+            className="flex items-center gap-3 group" 
+            aria-label="Home"
+          >
             <div className="w-10 h-10 bg-gradient-to-br from-primary-600 to-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-primary-500/20 transition-transform group-hover:scale-105">
               <span className="font-bold text-lg tracking-tight">IS</span>
             </div>
@@ -78,6 +87,8 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-slate-600 dark:text-slate-300 focus:outline-none"
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -92,15 +103,15 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, toggleTheme }) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 overflow-hidden"
+            className="md:hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 overflow-hidden shadow-lg"
           >
             <div className="flex flex-col space-y-4 px-4 py-6">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-lg font-medium text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400"
+                  onClick={handleNavClick}
+                  className="text-lg font-medium text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400 block py-2"
                 >
                   {item.label}
                 </a>
