@@ -32,7 +32,6 @@ export const About: React.FC = () => {
             </p>
           </div>
         </div>
-
         <div className="md:w-1/2">
           <h3 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white">
             Tech Stack
